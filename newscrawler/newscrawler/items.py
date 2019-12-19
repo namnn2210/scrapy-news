@@ -15,4 +15,5 @@ class NewscrawlerItem(scrapy.Item):
     href = scrapy.Field()
     sub_content = scrapy.Field()
     raw_content = scrapy.Field()
+    click_time = scrapy.Field()
     pass

@@ -22,7 +22,7 @@ class VnexpressSpider(scrapy.Spider):
                 yield request
 
         next_page = "https://vnexpress.net/the-thao/p" + str(VnexpressSpider.page_number)
-        if VnexpressSpider.page_number <= 1600:
+        if VnexpressSpider.page_number <= 300:
             VnexpressSpider.page_number += 1
             yield response.follow(next_page, callback=self.parse)
 
@@ -38,4 +38,5 @@ class VnexpressSpider(scrapy.Spider):
         items['href'] = href
         items['sub_content'] = sub_content
         items['raw_content'] = str
+        items['click_time'] = 0
         yield items
